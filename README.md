@@ -12,6 +12,7 @@ Userscripts to add functionality to several pages (sooonish).
 	* Safari - install [Tampermonkey](https://tampermonkey.net/?ext=dhdg&browser=safari).
 
 2. Install scripts
+
   | Name          |  Description                                                  | Install               |
   |---------------|:-------------------------------------------------------------:|:---------------------:|
   | enhance-toggl | enhances the toggl report page with additional displayed info | [install][enhance-raw]|
