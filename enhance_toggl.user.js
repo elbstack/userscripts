@@ -10,8 +10,16 @@
 
 function enhanceToggl() {
   const time = 1000;
+  const avgNodeXpath = "//span[contains(text(), 'Avg. hourly rate')]"
   const billableXpath = "//span[contains(text(), 'Billable hours')]";
   const amountXpath = "//span[contains(text(),'Amount')]";
+
+  const avgNode = document.evaluate(avgNodeXpath, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
+
+  if (avgNode !== null) {
+    return;
+  }
+
   const billableNode = document.evaluate(
     billableXpath,
     document,
