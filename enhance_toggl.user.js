@@ -14,12 +14,6 @@ function enhanceToggl() {
   const billableXpath = "//span[contains(text(), 'Billable hours')]";
   const amountXpath = "//span[contains(text(),'Amount')]";
 
-  const avgNode = document.evaluate(avgNodeXpath, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
-
-  if (avgNode !== null) {
-    return;
-  }
-
   const billableNode = document.evaluate(
     billableXpath,
     document,
@@ -29,6 +23,12 @@ function enhanceToggl() {
   ).singleNodeValue;
 
   if (billableNode !== null) {
+  	const avgNode = document.evaluate(avgNodeXpath, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
+
+  	if (avgNode !== null) {
+    	return;
+  	}
+
     const nodes = [];
     let node;
     const nodeList = document.evaluate(
